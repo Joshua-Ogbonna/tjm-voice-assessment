@@ -17,6 +17,66 @@ MOCK_CALLER_PHONE="+1-555-123-4567" npm start
 MOCK_CALLER_PHONE="+1-555-000-0000" npm start
 ```
 
+Known test caller numbers:
+
+```txt
++1-555-123-4567 -> HealthFirst Pharmacy
++1-555-987-6543 -> QuickMeds Rx
++1-555-666-7777 -> MediCare Plus
++1-555-222-3333 -> CityPharma
++1-555-444-5555 -> Wellness Hub
++1-555-000-0000 -> Unknown pharmacy flow
+```
+
+## Test Workflows
+
+Use these sample caller messages after starting the CLI.
+
+### Recognized Pharmacy
+
+```bash
+MOCK_CALLER_PHONE="+1-555-123-4567" npm start
+```
+
+```txt
+How do you help with high Rx volume?
+Can you send me email info?
+What is your exact pricing?
+Can you diagnose a patient prescription issue?
+Can you schedule a callback?
+Tomorrow at 2pm
+bye
+```
+
+This demonstrates caller identification, personalized Rx-volume messaging, mocked email follow-up, pricing guardrails, clinical safety handling, callback scheduling, and call close.
+
+### Unknown Pharmacy
+
+```bash
+MOCK_CALLER_PHONE="+1-555-000-0000" npm start
+```
+
+```txt
+BrightCare Pharmacy
+Around 600 per day
+Can you send information?
+manager@brightcare.com
+bye
+```
+
+This demonstrates the intake path for an unrecognized caller, including collecting pharmacy name, Rx volume, and follow-up email.
+
+### Other Useful Prompts
+
+```txt
+What services do you offer?
+How can TJM Labs support our pharmacy?
+Can someone call me back?
+What does it cost?
+Can you help with a patient medication question?
+What is the weather today?
+```
+
 ## What It Demonstrates
 
 - Call/session state kept separately from response generation
