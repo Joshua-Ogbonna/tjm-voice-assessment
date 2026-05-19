@@ -45,7 +45,13 @@ const intentKeywords: Array<{ intent: Intent; patterns: RegExp[] }> = [
   },
   {
     intent: "ASK_SERVICES",
-    patterns: [/\bservice\b/i, /\bwhat do you do\b/i, /\bhow can you help\b/i, /\bsupport\b/i]
+    patterns: [
+      /\bservices?\b/i,
+      /\bwhat do you do\b/i,
+      /\bwhat do you offer\b/i,
+      /\bhow can you help\b/i,
+      /\bsupport\b/i
+    ]
   }
 ];
 
